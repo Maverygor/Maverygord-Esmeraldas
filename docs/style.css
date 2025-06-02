@@ -1,13 +1,32 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
-  background-color: #f4f4f4;
+  background-image: url('imagenes/fondo-de-pagina.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 header {
   text-align: center;
   margin-bottom: 20px;
+  color: #e4f1d3;
 }
+
+.header-contenido {
+  display: flex;
+  align-items: center;
+  gap: 620px; /* espacio entre logo y texto */
+  justify-content: center; /* centra el bloque completo */
+}
+
+.logo-header {
+  width: 100px; /* ajusta el tamaño a tu gusto */
+  height: auto;
+  cursor: pointer; /* Para indicar que es clickeable */
+}
+
 
 .productos {
   display: flex;
@@ -63,7 +82,6 @@ header {
   margin-top: 20px;
 }
 
-
 /* Imagen centrada y responsiva */
 .contenedor-imagen-ampliada img {
   max-width: 50%;
@@ -91,11 +109,34 @@ header {
 
 .carrito {
   margin-top: 30px;
-  background: #fff;
+  background-image: url('imagenes/Carro-Maverygord-Esmeraldas.png');
+  background-size: cover;      /* Ajusta la imagen al tamaño del contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  color: white; /* Asegúrate de que el texto sea visible si el fondo es oscuro */
 }
+
+.carrito {
+  position: relative;
+  overflow: hidden;
+}
+
+.carrito::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* fondo semitransparente negro */
+  z-index: 0;
+}
+
+.carrito * {
+  position: relative;
+  z-index: 1;
+}
+
 
 button {
   background-color: #5c67f2;
@@ -120,3 +161,40 @@ button:hover {
   flex-wrap: wrap;
   margin-top: 15px;
 }
+
+.carrito, .productos {
+  background-color: rgba(255, 255, 255, 0.562); /* Blanco con 90% opacidad */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+    .btn-pse {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #d4aa00;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: bold;
+      font-family: sans-serif;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-pse:hover {
+      background-color: #b89400;
+      cursor: pointer;
+    }
+
+    .pse-logo {
+      width: 50px;
+      height: 50px;
+      background-image: url('imagenes/pse-logo.jpg');
+      background-size: cover;
+      background-position: -3px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
