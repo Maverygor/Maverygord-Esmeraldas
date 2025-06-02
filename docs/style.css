@@ -16,11 +16,77 @@ header {
 }
 
 .producto {
-  background-color: white;
-  padding: 15px;
   border: 1px solid #ccc;
-  width: 200px;
-  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 180px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.imagen-producto {
+ width: 150px;
+  height: 150px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.imagen-producto:hover {
+  transform: scale(1.05);
+}
+
+/* Fondo oscuro para la imagen ampliada */
+.overlay-imagen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* <--- antes era center */
+  z-index: 1000;
+  padding: 40px 20px 20px; /* más espacio arriba */
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.contenedor-imagen-ampliada {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 20px;
+}
+
+
+/* Imagen centrada y responsiva */
+.contenedor-imagen-ampliada img {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+/* Botón de cerrar */
+.cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+.descripcion-producto {
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .carrito {

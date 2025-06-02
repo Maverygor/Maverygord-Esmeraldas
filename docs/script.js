@@ -1,7 +1,7 @@
 const productos = [
-  { id: 1, nombre: "Anillo para dama, talla 7 y 1/2", precio: 350000 },
-  { id: 2, nombre: "Dije en plata con esmeralda natural", precio: 35000 },
-  { id: 3, nombre: "Producto C", precio: 20000 },
+  { id: 1, nombre: "Anillo para dama, talla 7 y 1/2", precio: 350000, imagen: "imagenes/anillo-talla-7.5.jpg", descripcion: "Anillo elegante para dama en talla 7 y medio, fabricado con materiales de alta calidad. plata ley 925 con esmeralda natural en forma de lágrima!✨ 💎 Incrustado con una esmeralda natural tallada en forma de lágrima, sin perma, de 0.60 quilates.Una joya elegante y única, ideal para ocasiones especiales o como regalo.Valor: $350.000 COP" },
+  { id: 2, nombre: "Dije en plata con esmeralda natural", precio: 450000, imagen: "imagenes/dije-en-plata-dama.jpg", descripcion: "Hermoso dije en plata con una esmeralda natural que destaca por su brillo y color. ¡Dije en plata 925 con esmeralda natural en forma de lágrima!✨ Dije para dama en plata ley 925, con una espectacular esmeralda natural tallada en forma de lágrima, sin perma, de 1 quilate.Una joya elegante, perfecta para realzar cualquier look o como regalo especial.Valor: $450.000 COP" },
+  { id: 3, nombre: "", precio: 20000 },
   { id: 4, nombre: "Producto D", precio: 15000 }
 ];
 
@@ -14,6 +14,7 @@ function mostrarProductos() {
     const div = document.createElement("div");
     div.className = "producto";
     div.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}" class="imagen-producto" onclick="ampliarImagen(this)" />
       <h3>${p.nombre}</h3>
       <p>Precio: $${p.precio}</p>
       <button onclick="agregarAlCarrito(${p.id})">Agregar</button>
@@ -98,3 +99,24 @@ async function pagarPayU() {
 
 // Inicializar
 mostrarProductos();
+
+function ampliarImagen(img) {
+  // Buscar el producto con el mismo nombre (alt)
+  const producto = productos.find(p => p.nombre === img.alt);
+  if (!producto) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "overlay-imagen";
+  overlay.innerHTML = `
+    <div class="contenedor-imagen-ampliada" style="display: flex; gap: 20px; align-items: flex-start; max-width: 90%; max-height: 80%;">
+      <img src="${img.src}" alt="${img.alt}" style="max-width: 50%; max-height: 100%; border-radius: 10px; box-shadow: 0 0 20px #000;" />
+      <div class="descripcion-producto" style="color: white; max-width: 45%; overflow-y: auto;">
+        <h2>${producto.nombre}</h2>
+        <p><strong>Precio:</strong> $${producto.precio}</p>
+        <p>${producto.descripcion || "Descripción no disponible."}</p>
+      </div>
+      <span class="cerrar" onclick="document.body.removeChild(this.parentNode.parentNode)">×</span>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+}
