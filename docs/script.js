@@ -1,7 +1,7 @@
 const productos = [
   { id: 1, nombre: "Anillo para dama, talla 7 y 1/2", precio: 350000 },
   { id: 2, nombre: "Dije en plata con esmeralda natural", precio: 35000 },
-  { id: 3, nombre: "Producto C", precio: 2000 },
+  { id: 3, nombre: "Producto C", precio: 20000 },
   { id: 4, nombre: "Producto D", precio: 15000 }
 ];
 
