@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maverygord Esmeraldas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Tienda Online Maverygord Esmeraldas</h1>
+  </header>
+
+  <main>
+    <section class="productos" id="productos">
+      <!-- Productos agregados por JS -->
+    </section>
+
+    <section class="carrito" id="carrito">
+      <h2>Carrito de compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p>Total: $<span id="total">0</span></p>
+      <div class="botones-pago">
+        <button onclick="mostrarPago()">Nequi / Daviplata</button>
+        <button onclick="pagarPayU()">Pagar con PayU</button>
+      </div>
+    </section>
+
+    <section id="instrucciones-pago" class="oculto">
+      <form
+        method="post"
+        action="https://checkout.payulatam.com/ppp-web-gateway-payu"
+        id="formPayU"
+      >
+        <input name="merchantId" type="hidden" value="1024933" />
+        <input name="accountId" type="hidden" value="1034100" />
+        <input name="description" type="hidden" value="Compra en Maverygord Esmeraldas" />
+        <input name="referenceCode" type="hidden" id="referenceCode" value="" />
+        <input name="amount" type="hidden" id="amountPayU" value="0" />
+        <input name="tax" type="hidden" value="0" />
+        <input name="taxReturnBase" type="hidden" value="0" />
+        <input name="currency" type="hidden" value="COP" />
+        <input name="signature" type="hidden" id="signature" value="" />
+        <input name="buyerEmail" type="hidden" id="buyerEmail" value="" />
+        <input name="responseUrl" type="hidden" value="TU_URL_DE_RESPUESTA" />
+        <input name="confirmationUrl" type="hidden" value="TU_URL_DE_CONFIRMACION" />
+      </form>
+
+      <h3>Instrucciones de pago</h3>
+      <p>Envía el total al siguiente número:</p>
+      <ul>
+        <li>Nequi: <strong>3164185832</strong></li>
+        <li>Daviplata: <strong>3209205321</strong></li>
+      </ul>
+      <p>
+        Después de realizar el pago, envía una captura al WhatsApp:
+        <strong>3209205321</strong>
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
