@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Maverygord Esmeraldas - Joyería de Esmeraldas Naturales</title>
+<meta name="description" content="Tienda online de joyería fina con esmeraldas naturales colombianas. Anillos, dijes y productos únicos con garantía de calidad." />
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Maverygord Esmeraldas - Joyas con Esmeraldas Naturales" />
+<meta property="og:description" content="Compra anillos, dijes y joyas únicas con esmeraldas colombianas. Garantía y envío nacional." />
+<meta property="og:image" content="https://maverygor.github.io/Maverygord-Esmeraldas/imagenes/Maverygord-Esmeraldas.png" />
+<meta property="og:url" content="https://maverygor.github.io/Maverygord-Esmeraldas/" />
+<meta property="og:type" content="website" />
+</head>
+<body>
+  <header>
+    <div class="header-contenido">
+      <img src="imagenes/Maverygord-Esmeraldas.png" alt="Logo de Maverygord Esmeraldas" class="logo-header" onclick="mostrarLogoAmpliado()" />
+      <h1>Tienda Online Maverygord Esmeraldas</h1>
+    </div>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#inicio" style="color: aliceblue;">Inicio</a></li>
+          <li><a href="#productos" style="color: aliceblue;">Productos</a></li>
+          <li><a href="#quienes-somos" style="color: aliceblue;">Quiénes Somos</a></li>
+          <li><a href="#catalogo" style="color: aliceblue;">Catálogo</a></li>
+          <li><a href="#contacto" style="color: aliceblue;">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p>Somos especialistas en joyería con esmeraldas naturales colombianas. Compra anillos, dijes y accesorios únicos con garantía de autenticidad y calidad. Envíos a todo Colombia.</p>
+
+    <!-- Productos -->
+    <section class="productos" id="productos"></section>
+
+    <!-- Carrito -->
+    <section class="carrito" id="carrito">
+      <h2>Carrito de compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p>Total: $<span id="total">0</span></p>
+      <!-- Contacto -->
+      <section id="contacto">
+      <div class="container" style="display: flex; flex-direction: column;">
+        <h2>Contacto</h2>
+        <div class="contacto-form">
+          <form id="contactForm">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="telefono" placeholder="Tu teléfono">
+            <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+            <input type="hidden" name="producto" id="producto">
+            <button type="submit">Enviar Mensaje</button>
+      </section>
+    </section>
+          </form>
+        </div>
+        <p>Teléfono: +57 3209205321</p>
+        <p>Dirección: Paipa Boyacá</p>
+        <p>Email: jaime1valery@gmail.com</p>
+      </div>
+   
+  </main>
+
+  <!-- 🛒 Carrito flotante (SIEMPRE afuera del form y main) -->
+  <div id="carrito-flotante">
+    🛒<span id="contador-carrito">0</span>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Maverigord Esmeraldas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
