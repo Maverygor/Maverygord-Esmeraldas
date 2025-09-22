@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-image: url('imagenes/fondo-de-pagina.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e4f1d3;
+}
+
+nav ul {
+      display: flex;
+      list-style: none;
+      text-decoration: none;
+      padding: 0;
+      margin: 0;
+      gap: 90px;
+      
+    }
+
+.header-contenido {
+  display: flex;
+  align-items: center;
+  gap: 620px;
+  justify-content: center;
+}
+
+.logo-header {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+}
+
+.productos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 180px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.imagen-producto {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.imagen-producto:hover {
+  transform: scale(1.05);
+}
+
+.carrito {
+  margin-top: 30px;
+  background-image: url('imagenes/Carro-Maverygord-Esmeraldas.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.carrito::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.carrito * {
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  background-color: #5c67f2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4a54d1;
+}
+
+.botones-pago {
+  margin-top: 15px;
+}
+
+.button{
+  background-color: #4a54d1;
+}
+
+.overlay-imagen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+  padding: 40px 20px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.contenedor-imagen-ampliada {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  box-shadow: 0 0 20px #000;
+}
+
+
+.contenedor-imagen-ampliada img {
+  max-width: 50%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+.descripcion-producto {
+  color: white;
+  max-width: 45%;
+  overflow-y: auto;
+}
+
+.cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+#carrito-flotante {
+  position: fixed;      /* siempre visible */
+  top: 20px;            /* separado del borde superior */
+  right: 20px;          /* separado del borde derecho */
+  font-size: 32px;      /* tamaño del emoji 🛒 */
+  cursor: pointer;
+  z-index: 9999;        /* que quede encima de todo */
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: green;   /* color de la notificación */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 8px;
+}
